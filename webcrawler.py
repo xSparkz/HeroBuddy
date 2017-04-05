@@ -22,6 +22,7 @@ from common import Echo
 URL_UUID = 'https://namemc.com/profile/'
 URL_SIGNATURE = 'https://sessionserver.mojang.com/session/minecraft/profile/<uuid>?unsigned=false'
 URL_SIGNATURE_REPLACE_TAG = '<uuid>'
+URL_HERO_PERMISSIONS =  'https://raw.githubusercontent.com/malonnnn/ServerConfig/master/PermissionsEx/permissions.yml'
 
 class WWWConnection():
 
@@ -60,7 +61,7 @@ class WWWConnection():
             Echo(('\t- Received response: ' + ResponseCode + ' from server'))
             Echo('\t - ERROR!!')
 
-            raise Exception(str('Unable to retrieve URL: ' + WebsiteURL))  #No point going any further
+            raise Exception('Unable to connect to website. Unknown error. Maybe you did something wrong.')  #No point going any further
 
         # Store page source
         PageSource = Response.read()
@@ -95,7 +96,42 @@ class WWWConnection():
 
         else:
 
-            raise Exception(str('Unable to read UUID from: ' + WebsiteURL)) #Something went wrong
+            raise Exception('Unable to read UUID from website. Unexpected format. Parsing error') #Something went wrong
+
+    def GetHeroPermissions(self):
+
+        #Get website
+        PageSource = self.__GetPageSource(URL_HERO_PERMISSIONS)
+
+        Echo('Reading Hero Permissions')
+
+        IsPermission = False #Track whether or not we are looking at a permission or some un-related line
+        Permissions = [] #Create a new list to keep track of the permissions
+
+        for Line in str(PageSource).split("\n"):
+
+            if IsPermission:
+
+                if '- ' in Line: #Assume we found a permission based on the formatting of the permissions file
+
+                    Permission = str(Line).strip() #Remove spaces at beginning and end of line
+                    Permission = str(Permission).strip('- ') #Remove hyphens
+
+                    if Permission not in Permissions: #Check to see if the permission is already in our list of permissions
+
+                        Permissions.append(Permission) #Add the permission to the list of permissions
+
+                    continue #Jump back to beginning of for loop and check for next permission
+
+                else:
+
+                    IsPermission = False #We are no longer looking at a permission because theres no hyphen in the line
+
+            if 'permissions:' in Line: IsPermission = True #Found the permissions identifier, should mean that the next line will be a permission
+
+        Permissions.sort() #Sort the permissions into alphabetical order
+
+        return Permissions #Puff puff pass
 
     def GetSignature(self, uuid):
 

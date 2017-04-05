@@ -21,8 +21,9 @@ class Main():
 
         WebSite = webcrawler.WWWConnection()
 
-        uuid = WebSite.GetUUID('xSp4rkz')
-        Signature, Value = WebSite.GetSignature(uuid)
+        #uuid = WebSite.GetUUID('xSp4rkz')
+        #Signature, Value = WebSite.GetSignature(uuid)
+        WebSite.GetHeroPermissions()
 
 
 if __name__ == "__main__":
