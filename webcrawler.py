@@ -17,12 +17,7 @@ __author__ = 'xSp4rkz'
 
 import mechanize, cookielib, re
 from bs4 import BeautifulSoup
-from common import Echo
-
-URL_UUID = 'https://namemc.com/profile/'
-URL_SIGNATURE = 'https://sessionserver.mojang.com/session/minecraft/profile/<uuid>?unsigned=false'
-URL_SIGNATURE_REPLACE_TAG = '<uuid>'
-URL_HERO_PERMISSIONS =  'https://raw.githubusercontent.com/malonnnn/ServerConfig/master/PermissionsEx/permissions.yml'
+from common import *
 
 class WWWConnection():
 
@@ -92,6 +87,7 @@ class WWWConnection():
 
                 uuid = str(uuidList[1].string.extract()).strip() #Grab the SPAN tag and extract the text in between the html tags
                 Echo('Found UUID for (' + PlayerName + '): ' + uuid)
+
                 return uuid
 
         else:
@@ -131,6 +127,8 @@ class WWWConnection():
 
         Permissions.sort() #Sort the permissions into alphabetical order
 
+        Echo('Done!')
+
         return Permissions #Puff puff pass
 
     def GetSignature(self, uuid):
@@ -166,10 +164,12 @@ class WWWConnection():
             Echo('Extracting Signature')
             SubValues = str(Values[2]).split(':')
             Signature = str(SubValues[2]).strip('"')
+            Echo('Done!')
 
             Echo('Extracting Value')
             SubValues = str(Values[4]).split(':')
             Value = str(SubValues[1]).strip('"')
+            Echo('Done!')
 
             return Signature, Value
 
