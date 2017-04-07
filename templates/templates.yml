@@ -1,0 +1,30 @@
+<heroname>:
+     override: false
+     replacements:
+       traits:
+         spawned: true
+         owner:
+           owner: Tektronic
+           uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+         gravity:
+         enabled: true
+         location:
+           world: greenfield
+           x: -1745.5
+           y: 69.5
+           z: 226.5
+           yaw: -90.0
+           pitch: 0.0
+       metadata:
+         player-skin-textures: <value>
+         player-skin-use-latest: false
+         cached-skin-uuid-name: <playername_lowercase>
+         cached-skin-uuid: <uuid>
+         player-skin-name: <playername_lowercase>
+         nameplate-visible: false
+         player-skin-signature: <signature>
+         avoidwater: false
+         usedefaultstuckaction: true
+       uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+       traitnames: spawned,type,inventory,owner,gravity,location
+       name: <heroname>

@@ -1,0 +1,10 @@
+ <heroname>:
+    inheritance:
+    - commonherotraits
+    options:
+      prefix: '<prefix>'
+      suffix: '<suffix>'
+    worlds:
+      survival:
+        permissions:
+        <permissions>
