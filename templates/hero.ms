@@ -2,8 +2,8 @@
 
 
 @hero = associative_array(
-            'name': '<heroname>',
-            'class': '<classname>',
+            'name': '<fancyname>',
+            'class': '<heroname>',
             'sig': '<signature>',
             'val': '<value>',
             'trail': '<trail>',

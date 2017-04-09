@@ -1,30 +1,30 @@
-0   Protection 	            protection
-1   Fire Protection 	    fire_protection
-2   Feather Falling 	    feather_falling
-3   Blast Protection 	    blast_protection
-4   Projectile Protection 	projectile_protection
-5   Respiration 	        respiration
-6   Aqua Affinity 	        aqua_affinity
-7   Thorns 	                thorns
-8   Depth Strider 	        depth_strider
-9   Frost Walker 	        frost_walker
-10  Curse of Binding 	    binding_curse
-16  Sharpness 	            sharpness
-17  Smite 	                smite
-18  Bane of Arthropods 	    bane_of_arthropods
-19  Knockback 	            knockback
-20  Fire Aspect 	        fire_aspect
-21  Looting 	            looting
-22  Sweeping Edge 	        sweeping
-32  Efficiency 	            efficiency
-33  Silk Touch 	            silk_touch
-34  Unbreaking 	            unbreaking
-35  Fortune 	            fortune
-48  Power 	                power
-49  Punch 	                punch
-50  Flame 	                flame
-51  Infinity 	            infinity
-61  Luck of the Sea 	    luck_of_the_sea
-62  Lure 	                lure
-70  Mending 	            mending
-71  Curse of Vanishing 	    vanishing_curse
+0   Protection 	                    protection
+1   Fire Protection 	            fire_protection
+2   Feather Falling 	            feather_falling
+3   Blast Protection 	            blast_protection
+4   Projectile Protection 	        projectile_protection
+5   Respiration 	                respiration
+6   Aqua Affinity 	                aqua_affinity
+7   Thorns 	                        thorns
+8   Depth Strider 	                depth_strider
+9   Frost Walker 	                frost_walker
+10  Curse of Binding 	            binding_curse
+16  Sharpness 	                    sharpness
+17  Smite 	                        smite
+18  Bane of Arthropods 	            bane_of_arthropods
+19  Knockback 	                    knockback
+20  Fire Aspect 	                fire_aspect
+21  Looting 	                    looting
+22  Sweeping Edge 	                sweeping
+32  Efficiency 	                    efficiency
+33  Silk Touch 	                    silk_touch
+34  Unbreaking 	                    unbreaking
+35  Fortune 	                    fortune
+48  Power 	                        power
+49  Punch 	                        punch
+50  Flame 	                        flame
+51  Infinity 	                    infinity
+61  Luck of the Sea 	            luck_of_the_sea
+62  Lure 	                        lure
+70  Mending 	                    mending
+71  Curse of Vanishing 	            vanishing_curse

@@ -1,0 +1,30 @@
+daddylikes:
+     override: false
+     replacements:
+       traits:
+         spawned: true
+         owner:
+           owner: Tektronic
+           uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+         gravity:
+         enabled: true
+         location:
+           world: greenfield
+           x: -1745.5
+           y: 69.5
+           z: 226.5
+           yaw: -90.0
+           pitch: 0.0
+       metadata:
+         player-skin-textures: eyJ0aW1lc3RhbXAiOjE0OTE3MDM4NDU2MDEsInByb2ZpbGVJZCI6Ijg3ZmIzYzZjNWZmNjRiZjZiMzI2OTkyYzYxMzdlYTEyIiwicHJvZmlsZU5hbWUiOiJHb2RfRG9lc250X0V4aXN0Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS85OGVkOGUxOTkwZDM3ZWQ5NTI2MDcyYzY0NDhkM2EyN2RiZTQ2YzJkYjkxZjVjZWRhZDliYTNjNDk3NWYxYjIifX19
+         player-skin-use-latest: false
+         cached-skin-uuid-name: <pyqt4.qtgui.qplaintextedit object at 0x7f76ce75b808>
+         cached-skin-uuid: <uuid>
+         player-skin-name: <pyqt4.qtgui.qplaintextedit object at 0x7f76ce75b808>
+         nameplate-visible: false
+         player-skin-signature: mTXP/LCigdS7SiHVyuVQNggLebjkRfIo2DD7J6Lj4wyrdROL4SM+gCVdbhc9xXYt//sJMyA3UhR25sU39eNSzRlGB3/l9gX9w964tAr8YRA2YICsz0GamtWSiqXRaZwtn3WT9ljkELToTsHdyV04QxPiZ1swX+LuBd7yK2zKsiI69AGbquV/qA+SBeuP6s8xdI5z5m7/iWe7yqVcw9FEdFvg3XfDH7Rzlt395IxC82xqfdKoOsvDk8Ve3vmQ2+2TsqbeXY6o4CypvgcGQ4ej7Y/dQLzk3h58vBNT3FfsPt/5q8qDrZjvAHf+9jpHXbojAklWH1knVQv2MM4FX51KuGqphJy9cpi33sqSau9z6BsFoDlULy5QhV815zS/OSXFol1sz7GMOuBO3dzkzs2qVOCICzMCwCPFCdG0GokFebZURYTq2S3D6pPlCxYRalt6lGzisHohFDJ05Kj8oaJoglDEBlMCm7CvBf1pSewpnt00B354wVE11wkewwaJMIr6xJDD2/dGi483fusB0IqVacF4NsYEve+DyMbxhjiYLvbvgVOBdDpPC8FFX7oIlljwYKF9cahcAg46tkaeGJLtmgavUA41+mmscff5d5Y8MV100b5ySihZT2HAUtR8Iy49RVF246RAlIH8xgNOvHywpjaQHABW1iPSDOryFT1nb7Q=
+         avoidwater: false
+         usedefaultstuckaction: true
+       uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+       traitnames: spawned,type,inventory,owner,gravity,location
+       name: daddylikes

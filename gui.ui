@@ -70,6 +70,12 @@
          <height>17</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Minecraft Player Name:</string>
        </property>
@@ -92,6 +98,9 @@
        <property name="verticalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
       </widget>
       <widget class="QPushButton" name="btnUsePlayerName">
        <property name="geometry">
@@ -113,7 +122,7 @@
         <x>10</x>
         <y>70</y>
         <width>421</width>
-        <height>171</height>
+        <height>211</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -187,7 +196,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>140</y>
+         <y>130</y>
          <width>101</width>
          <height>17</height>
         </rect>
@@ -200,7 +209,7 @@
        <property name="geometry">
         <rect>
          <x>110</x>
-         <y>130</y>
+         <y>120</y>
          <width>301</width>
          <height>31</height>
         </rect>
@@ -250,14 +259,55 @@
         <enum>QPlainTextEdit::NoWrap</enum>
        </property>
       </widget>
+      <widget class="QPlainTextEdit" name="txtChatColor">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>160</y>
+         <width>301</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the color that the Heroes chat will appear as. Use the color codes found on the color codes page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+       <property name="plainText">
+        <string>&amp;0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblChatColor">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>101</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Chat Color: (Suffix)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
      <widget class="QFrame" name="frame">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>260</y>
+        <y>290</y>
         <width>421</width>
-        <height>181</height>
+        <height>151</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -271,9 +321,15 @@
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>101</width>
+         <width>51</width>
          <height>17</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Trails:</string>
@@ -285,7 +341,7 @@
          <x>10</x>
          <y>30</y>
          <width>401</width>
-         <height>141</height>
+         <height>111</height>
         </rect>
        </property>
        <property name="toolTip">
@@ -305,6 +361,19 @@
        </property>
        <property name="sortingEnabled">
         <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblOptional">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>181</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>(optional) Generally not Used</string>
        </property>
       </widget>
      </widget>
@@ -331,6 +400,12 @@
          <width>111</width>
          <height>17</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Powers:</string>
@@ -392,6 +467,12 @@
          <width>101</width>
          <height>17</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Buffs:</string>
@@ -529,6 +610,9 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The PlayerName you have used&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
@@ -547,6 +631,9 @@
         <width>641</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's UUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
@@ -567,6 +654,9 @@
         <height>121</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's Texture Signature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
@@ -585,6 +675,9 @@
         <width>641</width>
         <height>141</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's Texture Value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
@@ -627,7 +720,7 @@
       <widget class="QLabel" name="lblColorCodes">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>10</x>
          <y>0</y>
          <width>431</width>
          <height>351</height>
@@ -641,6 +734,220 @@
        </property>
        <property name="pixmap">
         <pixmap>images/colorcodes.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_1">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>20</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_2">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>40</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_3">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>60</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_4">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>80</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_5">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>100</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_6">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>120</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_7">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>140</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_8">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>160</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_9">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>180</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_10">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>200</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_11">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>220</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_12">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>240</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_13">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>260</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_14">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>280</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_15">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>300</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_16">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>320</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>
@@ -771,6 +1078,84 @@
         <string>&amp;r Reset</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="btnColor_17">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>10</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_18">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>30</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_19">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>50</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_20">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>70</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_21">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>90</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnColor_22">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>140</y>
+         <width>21</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QFrame" name="frameScratchPad">
       <property name="geometry">
@@ -805,6 +1190,9 @@
        <property name="frameShadow">
         <enum>QFrame::Sunken</enum>
        </property>
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
       </widget>
       <widget class="QLabel" name="lblScratchPad">
        <property name="geometry">
@@ -829,7 +1217,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Clone as Heroes Fancy Name</string>
+        <string>Clone to Heroes Fancy Name</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnCloneToHeroesSpeech">
@@ -842,20 +1230,33 @@
         </rect>
        </property>
        <property name="text">
-        <string>Clone as Heroes Speech</string>
+        <string>Clone to Heroes Speech</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnClearScratchPad">
        <property name="geometry">
         <rect>
-         <x>510</x>
+         <x>690</x>
          <y>10</y>
-         <width>121</width>
+         <width>81</width>
          <height>27</height>
         </rect>
        </property>
        <property name="text">
         <string>Clear</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnCloneToHeroesChatColor">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>10</y>
+         <width>171</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Clone to Chat Color</string>
        </property>
       </widget>
      </widget>
@@ -1084,25 +1485,6 @@
        <string>Create Hero Files</string>
       </property>
      </widget>
-     <widget class="QProgressBar" name="progressBar">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>220</y>
-        <width>261</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="value">
-       <number>0</number>
-      </property>
-      <property name="invertedAppearance">
-       <bool>false</bool>
-      </property>
-     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="picIcon">
@@ -1119,37 +1501,6 @@
     </property>
     <property name="pixmap">
      <pixmap>images/icon.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="txtStatus">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>590</y>
-      <width>781</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="midLineWidth">
-     <number>0</number>
-    </property>
-    <property name="lineWrapMode">
-     <enum>QPlainTextEdit::NoWrap</enum>
-    </property>
-    <property name="textInteractionFlags">
-     <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-    </property>
-    <property name="backgroundVisible">
-     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="lblHeroBuddy">
@@ -1194,6 +1545,31 @@
      <string>Malons Server</string>
     </property>
    </widget>
+   <widget class="QListWidget" name="listStatus">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>590</y>
+      <width>791</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+   </widget>
   </widget>
  </widget>
  <tabstops>
@@ -1216,14 +1592,35 @@
   <tabstop>btnCloneToHeroName</tabstop>
   <tabstop>btnCloneToHeroesSpeech</tabstop>
   <tabstop>btnClearScratchPad</tabstop>
-  <tabstop>txtHeroPermissions</tabstop>
   <tabstop>listPermissions</tabstop>
   <tabstop>txtEnchantments</tabstop>
   <tabstop>txtEffects</tabstop>
   <tabstop>txtBlocks</tabstop>
   <tabstop>btnCreate</tabstop>
+  <tabstop>btnColor_1</tabstop>
+  <tabstop>btnColor_2</tabstop>
+  <tabstop>btnColor_4</tabstop>
+  <tabstop>btnColor_6</tabstop>
+  <tabstop>btnColor_9</tabstop>
+  <tabstop>btnColor_11</tabstop>
+  <tabstop>btnColor_13</tabstop>
+  <tabstop>btnColor_5</tabstop>
+  <tabstop>txtHeroPermissions</tabstop>
+  <tabstop>btnColor_7</tabstop>
+  <tabstop>btnColor_8</tabstop>
   <tabstop>TabbedLayout</tabstop>
-  <tabstop>txtStatus</tabstop>
+  <tabstop>btnColor_10</tabstop>
+  <tabstop>btnColor_3</tabstop>
+  <tabstop>btnColor_12</tabstop>
+  <tabstop>btnColor_14</tabstop>
+  <tabstop>btnColor_15</tabstop>
+  <tabstop>btnColor_16</tabstop>
+  <tabstop>btnColor_17</tabstop>
+  <tabstop>btnColor_18</tabstop>
+  <tabstop>btnColor_19</tabstop>
+  <tabstop>btnColor_20</tabstop>
+  <tabstop>btnColor_21</tabstop>
+  <tabstop>btnColor_22</tabstop>
  </tabstops>
  <resources/>
  <connections/>

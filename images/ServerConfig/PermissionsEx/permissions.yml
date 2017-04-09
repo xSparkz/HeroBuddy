@@ -1,0 +1,12 @@
+ daddylikes:
+    inheritance:
+    - commonherotraits
+    options:
+      prefix: 'BigDaddy'
+      suffix: '&1&9'
+    worlds:
+      survival:
+        permissions:
+        - BCC.cmd.ignore
+        - OpenInv.openinv
+        - 

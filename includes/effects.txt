@@ -1,27 +1,27 @@
-1 	Speed 	Increases walking speed
-2 	Slowness 	Decreases walking speed
-3 	Haste 	Increases mining and attack speed
-4 	Mining Fatigue 	Decreases mining and attack speed
-5 	Strength 	Increases melee damage
-6 	Instant Health 	Heals entities, damages undead
-7 	Instant Damage 	Damages entities, heals undead
-8 	Jump Boost 	Increases jump height and reduces fall damage
-9 	Nausea 	Wobbles and warps the screen
-10 	Regeneration 	Regenerates health over time
-11 	Resistance 	Reduces most damage
-12 	Fire Resistance 	Immunity to fire, etc.
-13 	Water Breathing 	Prevents drowning
-14 	Invisibility 	Grants invisibility
-15 	Blindness 	Impairs vision and disables the ability to sprint
-16 	Night Vision 	Negates darkness
-17 	Hunger 	Increases food exhaustion
-18 	Weakness 	Decreases melee damage
-19 	Poison 	Inflicts damage over time (but can't kill)
-20 	Wither 	Inflicts damage over time (can kill)
-21 	Health Boost 	Increases maximum health
-22 	Absorption 	Adds damage absorption
-23 	Saturation 	Restores hunger and saturation
-24 	Glowing 	Outlines entities (can be seen through blocks)
-25 	Levitation 	Floats entities upwards
-26 	Luck 	Increases chances of high-quality loot
-27 	Bad Luck 	Reduces chances of high-quality loot
+1 	    Speed 	                    Increases walking speed
+2 	    Slowness 	                Decreases walking speed
+3 	    Haste 	                    Increases mining and attack speed
+4 	    Mining Fatigue 	            Decreases mining and attack speed
+5 	    Strength 	                Increases melee damage
+6 	    Instant Health 	            Heals entities, damages undead
+7 	    Instant Damage 	            Damages entities, heals undead
+8 	    Jump Boost 	                Increases jump height and reduces fall damage
+9 	    Nausea 	                    Wobbles and warps the screen
+10 	    Regeneration 	            Regenerates health over time
+11 	    Resistance 	                Reduces most damage
+12 	    Fire Resistance 	        Immunity to fire, etc.
+13 	    Water Breathing 	        Prevents drowning
+14 	    Invisibility 	            Grants invisibility
+15 	    Blindness 	                Impairs vision and disables the ability to sprint
+16 	    Night Vision 	            Negates darkness
+17 	    Hunger 	                    Increases food exhaustion
+18 	    Weakness 	                Decreases melee damage
+19 	    Poison 	                    Inflicts damage over time (but can't kill)
+20 	    Wither 	                    Inflicts damage over time (can kill)
+21 	    Health Boost 	            Increases maximum health
+22 	    Absorption 	                Adds damage absorption
+23 	    Saturation 	                Restores hunger and saturation
+24 	    Glowing 	                Outlines entities (can be seen through blocks)
+25 	    Levitation 	                Floats entities upwards
+26 	    Luck 	                    Increases chances of high-quality loot
+27 	    Bad Luck 	                Reduces chances of high-quality loot

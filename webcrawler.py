@@ -39,10 +39,13 @@ class WWWConnection():
         self.__Browser.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
         self.__Browser.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
+        #Gui Connections
+        self.__GuiOutput = None #Holds the pointer to a Textbox to output text to the gui when something happens
+
     def __GetPageSource(self, WebsiteURL):
 
         #Connect to website
-        Echo('Connecting to ' + WebsiteURL)
+        Echo('Connecting to ' + WebsiteURL, self.__GuiOutput)
         self.__Browser.open(WebsiteURL)
 
         #Check response
@@ -52,9 +55,9 @@ class WWWConnection():
         #Make sure response is good
         if not ResponseCode == 200:  # Look for an 'OK' code (200)
 
-            Echo('Uh Oh! Not sure what happened.. Hmmm...')
-            Echo(('\t- Received response: ' + ResponseCode + ' from server'))
-            Echo('\t - ERROR!!')
+            Echo('Uh Oh! Not sure what happened.. Hmmm...', GuiOutput=self.__GuiOutput)
+            Echo('\t- Received response: ' + ResponseCode + ' from server', GuiOutput=self.__GuiOutput)
+            Echo('\t - ERROR!!', GuiOutput=self.__GuiOutput)
 
             raise Exception('Unable to connect to website. Unknown error. Maybe you did something wrong.')  #No point going any further
 
@@ -63,6 +66,9 @@ class WWWConnection():
 
         return PageSource
 
+    def ConnectGUI(self, GuiOutput):
+
+        self.__GuiOutput = GuiOutput
 
     def GetUUID(self, PlayerName):
 
@@ -72,7 +78,7 @@ class WWWConnection():
         #Get website
         PageSource = self.__GetPageSource(WebsiteURL)
 
-        Echo('Extracting UUID')
+        Echo('Extracting UUID', GuiOutput=self.__GuiOutput)
 
         #Prepare the Website Source Code to be read using BeautifulSoup
         HTML = BeautifulSoup(PageSource)
@@ -86,7 +92,7 @@ class WWWConnection():
             if len(uuidList) > 1: #Check to see if theres more than 1. There should be 2
 
                 uuid = str(uuidList[1].string.extract()).strip() #Grab the SPAN tag and extract the text in between the html tags
-                Echo('Found UUID for (' + PlayerName + '): ' + uuid)
+                Echo('Found UUID for (' + PlayerName + '): ' + uuid, GuiOutput=self.__GuiOutput)
 
                 return uuid
 
@@ -99,7 +105,7 @@ class WWWConnection():
         #Get website
         PageSource = self.__GetPageSource(URL_HERO_PERMISSIONS)
 
-        Echo('Reading Hero Permissions')
+        Echo('Reading Hero Permissions', GuiOutput=self.__GuiOutput)
 
         IsPermission = False #Track whether or not we are looking at a permission or some un-related line
         Permissions = [] #Create a new list to keep track of the permissions
@@ -127,7 +133,7 @@ class WWWConnection():
 
         Permissions.sort() #Sort the permissions into alphabetical order
 
-        Echo('Done!')
+        Echo('Done!', GuiOutput=self.__GuiOutput)
 
         return Permissions #Puff puff pass
 
@@ -139,7 +145,7 @@ class WWWConnection():
         # Get website
         PageSource = self.__GetPageSource(WebsiteURL)
 
-        Echo('Parsing Texture Information')
+        Echo('Parsing Texture Information', GuiOutput=self.__GuiOutput)
 
         #Remove Brackets
         PageSource = str(PageSource).replace('{',"") #{
@@ -161,15 +167,15 @@ class WWWConnection():
 
         if len(Values) == 5: #We did something right
 
-            Echo('Extracting Signature')
+            Echo('Extracting Signature', GuiOutput=self.__GuiOutput)
             SubValues = str(Values[2]).split(':')
             Signature = str(SubValues[2]).strip('"')
-            Echo('Done!')
+            Echo('Done!', GuiOutput=self.__GuiOutput)
 
-            Echo('Extracting Value')
+            Echo('Extracting Value', GuiOutput=self.__GuiOutput)
             SubValues = str(Values[4]).split(':')
             Value = str(SubValues[1]).strip('"')
-            Echo('Done!')
+            Echo('Done!', GuiOutput=self.__GuiOutput)
 
             return Signature, Value
 
