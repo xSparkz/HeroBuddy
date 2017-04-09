@@ -10,3 +10,38 @@
         - BCC.cmd.ignore
         - OpenInv.openinv
         - 
+ devil:
+    inheritance:
+    - commonherotraits
+    options:
+      prefix: 'TheDevil	'
+      suffix: '&0'
+    worlds:
+      survival:
+        permissions:
+        - OpenInv.openender
+        - OpenInv.openinv
+        - 
+ chester:
+    inheritance:
+    - commonherotraits
+    options:
+      prefix: 'SADSD'
+      suffix: '&0'
+    worlds:
+      survival:
+        permissions:
+        - OpenInv.openinv
+        - Magic.wand.use
+        - Signshop.Permit
+        - Signshop.DenyUse.*
+        - Signshop.ChangeOwner
+ chester:
+    inheritance:
+    - commonherotraits
+    options:
+      prefix: 'SADSD'
+      suffix: '&0'
+    worlds:
+      survival:
+        permissions:

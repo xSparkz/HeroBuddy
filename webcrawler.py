@@ -23,43 +23,45 @@ class WWWConnection():
 
     def __init__(self):
 
-        #Browser
+        # Browser
         self.__Browser = mechanize.Browser()
 
-        #Cookie Jar
+        # Cookie Jar
+        # Needed to handle sessions
         self.__CookieJar = cookielib.LWPCookieJar()
         self.__Browser.set_cookiejar(self.__CookieJar)
 
-        #Browser Options
+        # Browser Options
         self.__Browser.set_handle_equiv(True)
         self.__Browser.set_handle_redirect(True)
         self.__Browser.set_handle_referer(True)
         self.__Browser.set_handle_robots(False)
+        self.__Browser.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1) # For redirects
 
-        self.__Browser.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+        # Setup Headers to appear like a regular browser. Without this step the browser may be confused as a BOT and denied service from a website
         self.__Browser.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
-        #Gui Connections
+        # Gui Connections
         self.__GuiOutput = None #Holds the pointer to a Textbox to output text to the gui when something happens
 
     def __GetPageSource(self, WebsiteURL):
 
-        #Connect to website
+        # Connect to website
         Echo('Connecting to ' + WebsiteURL, self.__GuiOutput)
         self.__Browser.open(WebsiteURL)
 
-        #Check response
+        # Check response
         Response = self.__Browser.response()
         ResponseCode = Response.code
 
-        #Make sure response is good
+        # Make sure response is good
         if not ResponseCode == 200:  # Look for an 'OK' code (200)
 
             Echo('Uh Oh! Not sure what happened.. Hmmm...', GuiOutput=self.__GuiOutput)
             Echo('\t- Received response: ' + ResponseCode + ' from server', GuiOutput=self.__GuiOutput)
             Echo('\t - ERROR!!', GuiOutput=self.__GuiOutput)
 
-            raise Exception('Unable to connect to website. Unknown error. Maybe you did something wrong.')  #No point going any further
+            raise Exception('Unable to connect to website. Unknown error. Maybe you did something wrong.')  # No point going any further
 
         # Store page source
         PageSource = Response.read()
@@ -72,70 +74,70 @@ class WWWConnection():
 
     def GetUUID(self, PlayerName):
 
-        #Generate the URL
+        # Generate the URL
         WebsiteURL = str(URL_UUID + PlayerName)
 
-        #Get website
+        # Get website
         PageSource = self.__GetPageSource(WebsiteURL)
 
         Echo('Extracting UUID', GuiOutput=self.__GuiOutput)
 
-        #Prepare the Website Source Code to be read using BeautifulSoup
+        # Prepare the Website Source Code to be read using BeautifulSoup
         HTML = BeautifulSoup(PageSource)
 
-        #Get UUID
+        # Get UUID
         uuidList = HTML.findAll('span', attrs={'class': 'uuid'})
 
-        #Did we find the UUID's? There should be 2
+        # Did we find the UUID's? There should be 2
         if uuidList is not None:
 
-            if len(uuidList) > 1: #Check to see if theres more than 1. There should be 2
+            if len(uuidList) > 1: # Check to see if theres more than 1. There should be 2
 
-                uuid = str(uuidList[1].string.extract()).strip() #Grab the SPAN tag and extract the text in between the html tags
+                uuid = str(uuidList[1].string.extract()).strip() # Grab the SPAN tag and extract the text in between the html tags
                 Echo('Found UUID for (' + PlayerName + '): ' + uuid, GuiOutput=self.__GuiOutput)
 
                 return uuid
 
         else:
 
-            raise Exception('Unable to read UUID from website. Unexpected format. Parsing error') #Something went wrong
+            raise Exception('Unable to read UUID from website. Unexpected format. Parsing error') # Something went wrong
 
     def GetHeroPermissions(self):
 
-        #Get website
+        # Get website
         PageSource = self.__GetPageSource(URL_HERO_PERMISSIONS)
 
         Echo('Reading Hero Permissions', GuiOutput=self.__GuiOutput)
 
-        IsPermission = False #Track whether or not we are looking at a permission or some un-related line
-        Permissions = [] #Create a new list to keep track of the permissions
+        IsPermission = False # Track whether or not we are looking at a permission or some un-related line
+        Permissions = [] # Create a new list to keep track of the permissions
 
         for Line in str(PageSource).split("\n"):
 
             if IsPermission:
 
-                if '- ' in Line: #Assume we found a permission based on the formatting of the permissions file
+                if '- ' in Line: # Assume we found a permission based on the formatting of the permissions file
 
-                    Permission = str(Line).strip() #Remove spaces at beginning and end of line
-                    Permission = str(Permission).strip('- ') #Remove hyphens
+                    Permission = str(Line).strip() # Remove spaces at beginning and end of line
+                    Permission = str(Permission).strip('- ') # Remove hyphens
 
-                    if Permission not in Permissions: #Check to see if the permission is already in our list of permissions
+                    if Permission not in Permissions: # Check to see if the permission is already in our list of permissions
 
-                        Permissions.append(Permission) #Add the permission to the list of permissions
+                        Permissions.append(Permission) # Add the permission to the list of permissions
 
-                    continue #Jump back to beginning of for loop and check for next permission
+                    continue # Jump back to beginning of for loop and check for next permission
 
                 else:
 
-                    IsPermission = False #We are no longer looking at a permission because theres no hyphen in the line
+                    IsPermission = False # We are no longer looking at a permission because theres no hyphen in the line
 
-            if 'permissions:' in Line: IsPermission = True #Found the permissions identifier, should mean that the next line will be a permission
+            if 'permissions:' in Line: IsPermission = True # Found the permissions identifier, should mean that the next line will be a permission
 
-        Permissions.sort() #Sort the permissions into alphabetical order
+        Permissions.sort() # Sort the permissions into alphabetical order
 
         Echo('Done!', GuiOutput=self.__GuiOutput)
 
-        return Permissions #Puff puff pass
+        return Permissions # Puff puff pass
 
     def GetSignature(self, uuid):
 
@@ -147,25 +149,25 @@ class WWWConnection():
 
         Echo('Parsing Texture Information', GuiOutput=self.__GuiOutput)
 
-        #Remove Brackets
-        PageSource = str(PageSource).replace('{',"") #{
-        PageSource = str(PageSource).replace('}', "") #}
-        PageSource = str(PageSource).replace('[', "") #[
-        PageSource = str(PageSource).replace(']', "") #]
+        # Remove Brackets
+        PageSource = str(PageSource).replace('{',"") # {
+        PageSource = str(PageSource).replace('}', "") # }
+        PageSource = str(PageSource).replace('[', "") # [
+        PageSource = str(PageSource).replace(']', "") # ]
 
-        #Split the values. Should end up with 5 Values
-            #(0) id (uuid)
-            #(1) name (name)
-            #(2) properties ("signature") (signature)
-            #(3) name ("textures")
-            #(4) value (value)
+        # Split the values. Should end up with 5 Values
+            # (0) id (uuid)
+            # (1) name (name)
+            # (2) properties ("signature") (signature)
+            # (3) name ("textures")
+            # (4) value (value)
 
         Values = str(PageSource).split(',')
 
-        Signature = '' #Placeholder for extracted signature
-        Value = '' #Placeholder for extracted value
+        Signature = '' # Placeholder for extracted signature
+        Value = '' # Placeholder for extracted value
 
-        if len(Values) == 5: #We did something right
+        if len(Values) == 5: # We did something right
 
             Echo('Extracting Signature', GuiOutput=self.__GuiOutput)
             SubValues = str(Values[2]).split(':')
@@ -177,7 +179,7 @@ class WWWConnection():
             Value = str(SubValues[1]).strip('"')
             Echo('Done!', GuiOutput=self.__GuiOutput)
 
-            return Signature, Value
+            return Signature, Value # Return both
 
         else:
             raise Exception ('Error: Unexpected result. Page format changed?')

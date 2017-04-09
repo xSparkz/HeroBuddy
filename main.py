@@ -13,6 +13,8 @@
 #You should have received a copy of the GNU General Public License
 #along with Hero Buddy.  If not, see <http://www.gnu.org/licenses/>.
 
+__author__ = 'xSp4rkz'
+
 import webcrawler # Functions to interact with internet such as obtaining users UUID or skin information
 import sys # Used to supply argv to application
 import gui # All of the GUI code independent from functional code
@@ -271,34 +273,35 @@ class Application():
             # Make the heroes name lower case so it can be used to create the files
             self.HeroesName = str(self.MainWindow.txtHeroesName.toPlainText()).lower()
 
-            BuildFolder = str(QtGui.QFileDialog.getExistingDirectory())
+            BuildFolder = str(QtGui.QFileDialog.getExistingDirectory()) # Show folder select dialog to select the build folder
 
             if len(BuildFolder) < 1:
                 return # User cancelled or didn't select a folder
 
             Folders = [] # Create a new list of folders to be created
 
-            Folders.append(BuildFolder + '/' + BUILD_FOLDER_HEROFILE)
-            Folders.append(BuildFolder + '/' + BUILD_FOLDER_PERMISSIONS)
-            Folders.append(BuildFolder + '/' + BUILD_FOLDER_TEMPLATES)
+            Folders.append(BuildFolder + '/' + BUILD_FOLDER_HEROFILE) # Add hero folder path to the list of folders (to be created)
+            Folders.append(BuildFolder + '/' + BUILD_FOLDER_PERMISSIONS) # Add permissions folder path to the list of folders (to be created)
+            Folders.append(BuildFolder + '/' + BUILD_FOLDER_TEMPLATES) # Add template folder path to the list of folders (to be created)
 
             for Folder in Folders:
 
                 Echo('Checking if folder exists: ' + Folder, Status)
 
-                if not os.path.exists(Folder):
+                if not os.path.exists(Folder): # If the folder doesn't exist:
 
                     Echo('**CREATE** ' + Folder, Status)
-                    os.makedirs(Folder)
+                    os.makedirs(Folder) # Create the folder
 
             # (1) Permissions File
             Template = open(FILE_TEMPLATE_PERMISSIONS, "r")  # Open file for reading
-            File = open(BuildFolder + '/' + BUILD_FILE_PERMISSIONS, 'a') # Open file for writting
+            File = open(BuildFolder + '/' + BUILD_FILE_PERMISSIONS, 'a') # Open file for appending (keep existing)
 
             Echo('Creating Permissions.yml file: ', Status)
 
             for Line in str(Template.read()).split("\n"):  # Split the file into Lines using the newline character and read it Line by Line
 
+                # Check for tags and replace them with the right info
                 if '<heroname>' in Line:
 
                     File.write(str(Line).replace('<heroname>', self.HeroesName) + "\n")
@@ -314,26 +317,26 @@ class Application():
 
                 if '<permissions>' in Line:
 
-                    SelectedPermissions = self.MainWindow.listPermissions.selectedItems()
-                    Permissions = []
+                    SelectedPermissions = self.MainWindow.listPermissions.selectedItems() # Get the selected permissions
+                    Permissions = [] # Create a new list to place the permissions in
 
-                    for Permission in list(SelectedPermissions):
+                    for Permission in list(SelectedPermissions): # Iterate through the selected items
 
-                        Permissions.append(str(Permission.text()))
+                        Permissions.append(str(Permission.text())) # Add selected item to list
 
-                    for Permission in Permissions:
+                    for Permission in Permissions: # Run through the list of permissions
 
-                        File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n")
+                        File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n") # Write it to the file
 
-                    if len(self.MainWindow.txtHeroPermissions.toPlainText()) > 1:
+                    if len(self.MainWindow.txtHeroPermissions.toPlainText()) > 1: # Check to see if theres anything written in the custom permissions box
 
-                        for Permission in str(self.MainWindow.txtHeroPermissions.toPlainText()).split("\n"):
+                        for Permission in str(self.MainWindow.txtHeroPermissions.toPlainText()).split("\n"): # Split them into a list using the newline character as a token
 
-                            File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n")
+                            File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n") # Write it to the file
 
                     continue
 
-                File.write(Line + "\n")
+                File.write(Line + "\n") # No tags were detected so leave the line as is
 
             File.close()
             Template.close()
@@ -345,9 +348,9 @@ class Application():
 
         Echo('Creating Hero.ms file', Status)
 
-        for Line in str(Template.read()).split(
-                "\n"):  # Split the file into Lines using the newline character and read it Line by Line
+        for Line in str(Template.read()).split("\n"):  # Split the file into Lines using the newline character and read it Line by Line
 
+            # Check for tags and replace them with the right info
             if '<heroname>' in Line:
                 File.write(str(Line).replace('<heroname>', self.HeroesName) + "\n")
                 continue
@@ -370,7 +373,7 @@ class Application():
 
             if '<op>' in Line:
 
-                if self.MainWindow.checkBoxOP.isChecked():
+                if self.MainWindow.checkBoxOP.isChecked(): # Check if the OP checkbox is checked or not
                     File.write(str(Line).replace('<op>', 'true') + "\n")
                 else:
                     File.write(str(Line).replace('<op>', 'false') + "\n")
@@ -379,32 +382,32 @@ class Application():
 
             if '<trail>' in Line:
 
-                SelectedTrails = self.MainWindow.listTrails.selectedItems()
-                Trails = []
-                TrailLine = ''
+                SelectedTrails = self.MainWindow.listTrails.selectedItems() # Get the selected trails
+                Trails = [] # Create a new list to store the trails in
+                TrailLine = '' # Will be used to build the final string with the list of trails to be inserted into the file
 
-                for Trail in list(SelectedTrails):
-                    Trails.append(str(Trail.text()))
+                for Trail in list(SelectedTrails): # Iterate through the selected items
+                    Trails.append(str(Trail.text())) # Add the item to the list of trails
 
-                for Trail in Trails:
-                    TrailLine = TrailLine + Trail + ', '
+                for Trail in Trails: # Iterate through the trails in the list
+                    TrailLine = TrailLine + Trail + ', ' # Add the trail to the final string and append a comma and a space for the next trail
 
-                File.write(str(Line).replace('<trail>', str(str(TrailLine).strip()).strip(',')) + "\n")
+                File.write(str(Line).replace('<trail>', str(TrailLine).strip().strip(',')) + "\n") # Remove the spaces on either end and remove the last comma
 
                 continue
 
             if '<powers>' in Line:
 
-                Powers = str(self.MainWindow.txtPowers.toPlainText()).split("\n")
-                NumberOfPowers = len(Powers)
+                Powers = str(self.MainWindow.txtPowers.toPlainText()).split("\n") # Create a list of powers by splitting them into lines
+                NumberOfPowers = len(Powers) # Count of Powers
 
-                if NumberOfPowers == 1:
+                if NumberOfPowers == 1: # Only 1 (No comma)
                     File.write(str(TAB_POWERS + str(ARRAY_TEMPLATE_SINGLE).replace('<item>', str(Powers[0]).strip('\"'))) + "\n")
                     continue
 
-                for index, Power in enumerate(Powers):
+                for index, Power in enumerate(Powers): # Used to keep track of current position within the loop
 
-                    if index == (NumberOfPowers - 1):
+                    if index == (NumberOfPowers - 1): # Last item in list. Make sure we don't add a comma at the end
                         File.write(str(TAB_POWERS + str(ARRAY_TEMPLATE_SINGLE).replace('<item>', str(Power).strip('\"'))) + "\n")
                         continue
 
@@ -415,16 +418,16 @@ class Application():
 
             if '<buffs>' in Line:
 
-                Buffs = str(self.MainWindow.txtBuffs.toPlainText()).split("\n")
-                NumberOfBuffs = len(Buffs)
+                Buffs = str(self.MainWindow.txtBuffs.toPlainText()).split("\n") # Create a list of buffs by splitting them into lines
+                NumberOfBuffs = len(Buffs) # Count of Buffs
 
-                if NumberOfBuffs == 1:
+                if NumberOfBuffs == 1: # Only 1 (no comma)
                     File.write(str(TAB_POWERS + str(ARRAY_TEMPLATE_SINGLE).replace('<item>', str(Buffs[0]).strip('\"'))) + "\n")
                     continue
 
-                for index, Buff in enumerate(Buffs):
+                for index, Buff in enumerate(Buffs): # Used to keep track of current position within the loop
 
-                    if index == (NumberOfBuffs - 1):
+                    if index == (NumberOfBuffs - 1): # Last item in list. Make sure we don't add a comma at the end
                         File.write(str(TAB_POWERS + str(ARRAY_TEMPLATE_SINGLE).replace('<item>', str(Buff).strip('\"'))) + "\n")
                         continue
 
@@ -446,6 +449,7 @@ class Application():
 
         for Line in str(Template.read()).split("\n"):  # Split the file into Lines using the newline character and read it Line by Line
 
+            # Check for tags and replace them with the right info
             if '<heroname>' in Line:
                 File.write(str(Line).replace('<heroname>', self.HeroesName) + "\n")
                 continue
@@ -537,6 +541,7 @@ class Application():
         File.close() # Close the file
 
     def __CheckForCompletion(self):
+        # Checks to make sure all the proper TextBoxes are completed and all the proper information is availabe to create a hero file
 
         MainWindow = self.MainWindow
         Status = self.MainWindow.listStatus

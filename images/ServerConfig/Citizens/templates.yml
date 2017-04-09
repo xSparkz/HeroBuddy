@@ -28,3 +28,93 @@ daddylikes:
        uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
        traitnames: spawned,type,inventory,owner,gravity,location
        name: daddylikes
+devil:
+     override: false
+     replacements:
+       traits:
+         spawned: true
+         owner:
+           owner: Tektronic
+           uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+         gravity:
+         enabled: true
+         location:
+           world: greenfield
+           x: -1745.5
+           y: 69.5
+           z: 226.5
+           yaw: -90.0
+           pitch: 0.0
+       metadata:
+         player-skin-textures: eyJ0aW1lc3RhbXAiOjE0OTE3MDQyMjExNzcsInByb2ZpbGVJZCI6ImNiODcxZjg2OTRlNTRiZjNhNzhlNDJmNzNjMjIxNWM0IiwicHJvZmlsZU5hbWUiOiJ4U3A0cmt6Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8yYjAzOTlmMTJhMjZmYjQyNWNmMTZhZTA1OTYyYzdjNTFiNWY0Mzg1N2Y0Mjc0Y2ZmY2YxYzY1NmNmMSJ9fX0=
+         player-skin-use-latest: false
+         cached-skin-uuid-name: xsp4rkz
+         cached-skin-uuid: <uuid>
+         player-skin-name: xsp4rkz
+         nameplate-visible: false
+         player-skin-signature: T2UqfICxJKc9G/WiMJiwG/SL9jqWFCRzUBCL0jZkXlljZ1nIYLhpgGFsWlLsuyYStBQDy08DDOy3Vp6zHJf3qG69vWI7FhBjyjt/bhI5A4J2BTn1ptQgWWXnsmDl5lzPqxCTBterdUgTs7/HEwIc7CoYlP4VXJuVLmesPWJlaWS5MD3nLbH1Rc5MJ10sGwPf+195pCCtiTW2CvnAVrglWrkQ8rof3H4gk692ukpEI1OGoStLv3KnnYKOAW/7lwrJ7a8NLQOzQKv+2SDh8IuzpiLYOqbHD/5Q1jXj3Drq81TljeCNdlXHit+eVeoY/iZm7yLJAqKgNNOKDualjCJhRckE5jthsdcaKv2MB+YWm9G+U16MwhMk29DkT5Jjo7WPqNe2VgHlXbZcI7vlkD0K7StF39Uf0AfE+3hWYRPjhbcH7qko2OIPb3Lt5AiCTDb/tPuaHSF+tay5yzoMBuyEOdxDozETjdgkSCGUDnLed1UVU5VpOdirfLAOE2TMPQiL/5jj+dfurNWzxffZGAjphIrhWy9yAvfsPM0hTBzaSwMJ7XBa2j4xc33UUIcyTi7Enzl38zTy8+KoTIGAS0axqXyZGEqeVjfbjlh+DwysW7R5RGs0wLMkSeDtWQFgulZDW+utdWKk2NwLUivdP3YgRHO8PDEt6y5qxuYHGYis1e8=
+         avoidwater: false
+         usedefaultstuckaction: true
+       uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+       traitnames: spawned,type,inventory,owner,gravity,location
+       name: devil
+chester:
+     override: false
+     replacements:
+       traits:
+         spawned: true
+         owner:
+           owner: Tektronic
+           uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+         gravity:
+         enabled: true
+         location:
+           world: greenfield
+           x: -1745.5
+           y: 69.5
+           z: 226.5
+           yaw: -90.0
+           pitch: 0.0
+       metadata:
+         player-skin-textures: eyJ0aW1lc3RhbXAiOjE0OTE3MDQzNzY4OTEsInByb2ZpbGVJZCI6ImNiODcxZjg2OTRlNTRiZjNhNzhlNDJmNzNjMjIxNWM0IiwicHJvZmlsZU5hbWUiOiJ4U3A0cmt6Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8yYjAzOTlmMTJhMjZmYjQyNWNmMTZhZTA1OTYyYzdjNTFiNWY0Mzg1N2Y0Mjc0Y2ZmY2YxYzY1NmNmMSJ9fX0=
+         player-skin-use-latest: false
+         cached-skin-uuid-name: xsp4rkz
+         cached-skin-uuid: <uuid>
+         player-skin-name: xsp4rkz
+         nameplate-visible: false
+         player-skin-signature: AqVKOQDkohsazqLqzgmA28K1/aYI5f5Z0rI2dZQp+eZJmjZy7ijgCnFNDRWa/rD/MEUxumXBR/rvPaJbgCju7I4w963TW60dskDVb0M0Y9bdGpHCgAk3QZNT0tBj+17vKtkC2X13oSqdBniSyYNSxNE/SVRqzr2gh/ymlRVqx6Eq180Ts2nFaDc5mHN8SV6lS4F0ZSMaWdTJOGALCz5JvFaEVQK1K0H9Kwe4gZRE0RfSephs7InjVUjlJJ8Jz3cAKA5NwlJ/T+yUzBVRb6clzfVOsXWEgD/qg4KRHmIziubNt+c2FSD/h88yf1JZdg80SUZphbvinE7a8S5zXu2CIq1uJqkZv+1onD1YEUFIex/fG4elnuDzy/bfp5RwYJNhaQbUPWMlCxwgw4iTzFxQY/AALRBcRY0gIS1SWvWIFa398RvFwzTAlThpukb/jI59xGNRRy4cOsWmB/rJTBxVRZQZxmv8l4jzImfC11i0C82kmewiOKEJ0QT4hVEoTQGxYoJ5/NjLg53psaxMPd5E5lIVHSz9KdObcUrSLqLdcv6TPJeYn0uYJpfEzHxz30kZHPjDDj70BHkK/o8s0NdA7IcWsSPc/YkAzTW6kVQscbQqgKSDzGX8fyJZXYaRmKiS2PR068wQmt0JaKgwjF31knp+Gh4IDUXexGMcKxiXEuU=
+         avoidwater: false
+         usedefaultstuckaction: true
+       uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+       traitnames: spawned,type,inventory,owner,gravity,location
+       name: chester
+chester:
+     override: false
+     replacements:
+       traits:
+         spawned: true
+         owner:
+           owner: Tektronic
+           uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+         gravity:
+         enabled: true
+         location:
+           world: greenfield
+           x: -1745.5
+           y: 69.5
+           z: 226.5
+           yaw: -90.0
+           pitch: 0.0
+       metadata:
+         player-skin-textures: eyJ0aW1lc3RhbXAiOjE0OTE3MDQzNzY4OTEsInByb2ZpbGVJZCI6ImNiODcxZjg2OTRlNTRiZjNhNzhlNDJmNzNjMjIxNWM0IiwicHJvZmlsZU5hbWUiOiJ4U3A0cmt6Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8yYjAzOTlmMTJhMjZmYjQyNWNmMTZhZTA1OTYyYzdjNTFiNWY0Mzg1N2Y0Mjc0Y2ZmY2YxYzY1NmNmMSJ9fX0=
+         player-skin-use-latest: false
+         cached-skin-uuid-name: xsp4rkz
+         cached-skin-uuid: <uuid>
+         player-skin-name: xsp4rkz
+         nameplate-visible: false
+         player-skin-signature: AqVKOQDkohsazqLqzgmA28K1/aYI5f5Z0rI2dZQp+eZJmjZy7ijgCnFNDRWa/rD/MEUxumXBR/rvPaJbgCju7I4w963TW60dskDVb0M0Y9bdGpHCgAk3QZNT0tBj+17vKtkC2X13oSqdBniSyYNSxNE/SVRqzr2gh/ymlRVqx6Eq180Ts2nFaDc5mHN8SV6lS4F0ZSMaWdTJOGALCz5JvFaEVQK1K0H9Kwe4gZRE0RfSephs7InjVUjlJJ8Jz3cAKA5NwlJ/T+yUzBVRb6clzfVOsXWEgD/qg4KRHmIziubNt+c2FSD/h88yf1JZdg80SUZphbvinE7a8S5zXu2CIq1uJqkZv+1onD1YEUFIex/fG4elnuDzy/bfp5RwYJNhaQbUPWMlCxwgw4iTzFxQY/AALRBcRY0gIS1SWvWIFa398RvFwzTAlThpukb/jI59xGNRRy4cOsWmB/rJTBxVRZQZxmv8l4jzImfC11i0C82kmewiOKEJ0QT4hVEoTQGxYoJ5/NjLg53psaxMPd5E5lIVHSz9KdObcUrSLqLdcv6TPJeYn0uYJpfEzHxz30kZHPjDDj70BHkK/o8s0NdA7IcWsSPc/YkAzTW6kVQscbQqgKSDzGX8fyJZXYaRmKiS2PR068wQmt0JaKgwjF31knp+Gh4IDUXexGMcKxiXEuU=
+         avoidwater: false
+         usedefaultstuckaction: true
+       uuid: 28556dea-667d-409f-b2ff-fb4177a20ff2
+       traitnames: spawned,type,inventory,owner,gravity,location
+       name: chester
