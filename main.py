@@ -325,9 +325,11 @@ class Application():
 
                         File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n")
 
-                    for Permission in str(self.MainWindow.txtHeroPermissions.toPlainText()).split("\n"):
+                    if len(self.MainWindow.txtHeroPermissions.toPlainText()) > 1:
 
-                        File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n")
+                        for Permission in str(self.MainWindow.txtHeroPermissions.toPlainText()).split("\n"):
+
+                            File.write(str(TAB_PERMISSIONS + '- ' + Permission) + "\n")
 
                     continue
 
