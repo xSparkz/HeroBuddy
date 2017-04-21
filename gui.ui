@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>802</width>
-    <height>708</height>
+    <height>697</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1599,7 +1599,7 @@
      <attribute name="title">
       <string>Enchantments</string>
      </attribute>
-     <widget class="QPlainTextEdit" name="txtEnchantments">
+     <widget class="QListWidget" name="listEnchantments">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1607,6 +1607,29 @@
         <width>781</width>
         <height>441</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Trail Permissions that your Super Hero will have access too. Example: Smoke, Wings, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::MultiSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
       </property>
      </widget>
     </widget>
@@ -1614,7 +1637,7 @@
      <attribute name="title">
       <string>Effects</string>
      </attribute>
-     <widget class="QPlainTextEdit" name="txtEffects">
+     <widget class="QListWidget" name="listEffects">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1623,13 +1646,36 @@
         <height>441</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Trail Permissions that your Super Hero will have access too. Example: Smoke, Wings, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::MultiSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tabBlockIDs">
      <attribute name="title">
       <string>Block &amp;&amp; Item ID's</string>
      </attribute>
-     <widget class="QPlainTextEdit" name="txtBlocks">
+     <widget class="QListWidget" name="listBlocks">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1637,6 +1683,29 @@
         <width>781</width>
         <height>441</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Trail Permissions that your Super Hero will have access too. Example: Smoke, Wings, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::MultiSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
       </property>
      </widget>
     </widget>
@@ -1734,7 +1803,7 @@
       <x>5</x>
       <y>630</y>
       <width>791</width>
-      <height>71</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -1746,7 +1815,7 @@
      <enum>QFrame::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Sunken</enum>
+     <enum>QFrame::Plain</enum>
     </property>
     <property name="editTriggers">
      <set>QAbstractItemView::NoEditTriggers</set>
@@ -1775,9 +1844,6 @@
   <tabstop>btnCloneToHeroesSpeech</tabstop>
   <tabstop>btnClearScratchPad</tabstop>
   <tabstop>listPermissions</tabstop>
-  <tabstop>txtEnchantments</tabstop>
-  <tabstop>txtEffects</tabstop>
-  <tabstop>txtBlocks</tabstop>
   <tabstop>btnCreate</tabstop>
   <tabstop>btnColor_1</tabstop>
   <tabstop>btnColor_2</tabstop>

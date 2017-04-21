@@ -55,15 +55,19 @@ class Application(QObject):
         self.__CopyListToListView(HeroPermissions, self.MainWindow.listPermissions) # Copy the permissions to the permissions list
 
         # (2) Effects
-        self.__CopyFileToText(FILE_EFFECTS, self.MainWindow.txtEffects) # Open file and read contents into destination
+        #self.__CopyFileToText(FILE_EFFECTS, self.MainWindow.txtEffects) # Open file and read contents into destination
+        self.__CopyFileToListView(FILE_EFFECTS, self.MainWindow.listEffects)  # Open file and read contents into destination
 
         # (3) Blocks and Items
-        self.__CopyFileToText(FILE_BLOCKS_AND_ITEMS, self.MainWindow.txtBlocks) # Open file and read contents into destination
+        #self.__CopyFileToText(FILE_BLOCKS_AND_ITEMS, self.MainWindow.txtBlocks) # Open file and read contents into destination
+        self.__CopyFileToListView(FILE_BLOCKS_AND_ITEMS, self.MainWindow.listBlocks) # Open file and read contents into destination
 
         # (4) Enchantments
-        self.__CopyFileToText(FILE_ENCHANTMENTS, self.MainWindow.txtEnchantments) # Open file and read contents into destination
+        #self.__CopyFileToText(FILE_ENCHANTMENTS, self.MainWindow.txtEnchantments) # Open file and read contents into destination
+        self.__CopyFileToListView(FILE_ENCHANTMENTS, self.MainWindow.listEnchantments) # Open file and read contents into destination
 
         # (5) Trails
+        #self.__CopyFileToListView(FILE_TRAILS, self.MainWindow.listTrails) # Open file and read contents into destination
         self.__CopyFileToListView(FILE_TRAILS, self.MainWindow.listTrails) # Open file and read contents into destination
 
         # Setup bindings
