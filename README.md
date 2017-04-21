@@ -18,9 +18,9 @@ Hero Buddy was built for developing heroes for this server.
 
 DEPENDENCIES
 ============
-Python 2.7
+Python 2.7, Mechanize, Qt4
 
-(1) sudo apt-get install python-mechanize python-qt4
+(1) sudo apt-get install python2.7 python-mechanize python-qt4
 
 
 MAKING CHANGES TO GUI
@@ -39,7 +39,7 @@ If you would like to make changes to the GUI (gui.ui) you will need to install Q
 HOW TO RUN
 ==========
 
-python main.py
+python herobuddy.py
 
 
 HOW TO USE
