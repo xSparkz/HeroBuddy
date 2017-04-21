@@ -1,3 +1,18 @@
+# This file is part of Hero Buddy.
+
+#Hero Buddy is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#Hero Buddy is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License
+#along with Hero Buddy.  If not, see <http://www.gnu.org/licenses/>.
+
 __author__ = 'xSp4rkz'
 
 import datetime
@@ -5,6 +20,11 @@ import datetime
 # Formats
 FORMAT_TIME = '%I:%M (%S) %p' # ex: 12:34 (04) PM
 FORMAT_DATE = '%d %b %Y - %A' # ex: 13 Nov 2014 - Monday
+
+# Regular Expressions
+REGEX_UUID = '<span class="uuid">([\\s\\S]*?)<\\/span>'
+REGEX_SIGNATURE = '\\[\\{"signature":"([\\s\\S]*?)"'
+REGEX_VALUE = '"value":"([\\s\\S]*?)"\\}'
 
 # Bukkit Color Codes
 COLOR_1 = '&1' # Dark Blue

@@ -36,6 +36,11 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+     </font>
+    </property>
     <property name="tabShape">
      <enum>QTabWidget::Rounded</enum>
     </property>
@@ -55,6 +60,11 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
+      </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
@@ -72,6 +82,7 @@
        </property>
        <property name="font">
         <font>
+         <family>Sans Serif</family>
          <weight>50</weight>
          <bold>false</bold>
         </font>
@@ -92,6 +103,11 @@
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Player Name you use in Minecraft&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -111,6 +127,11 @@
          <height>27</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>use</string>
        </property>
@@ -124,6 +145,11 @@
         <width>421</width>
         <height>211</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
@@ -140,6 +166,11 @@
          <height>17</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>Heroes Name:</string>
        </property>
@@ -152,6 +183,11 @@
          <width>311</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;What is the name of your Hero going to be? Don't include spaces. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -172,6 +208,11 @@
          <height>22</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set to True if your Hero requires OP. Generally if your hero is Invincible or uses features like Creative Mode.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -188,6 +229,11 @@
          <height>17</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>Is Hero OP?</string>
        </property>
@@ -201,6 +247,11 @@
          <height>17</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>Heroes Speech:</string>
        </property>
@@ -213,6 +264,11 @@
          <width>301</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is what your Hero says when using the command /buff. Usually your characters famous tag line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -233,6 +289,11 @@
          <height>31</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>Heroes Fancy Name:</string>
        </property>
@@ -248,6 +309,11 @@
          <width>271</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How will the name of your Hero appear in-game such as chat? You can use color codes to format the name, and you can use spaces.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -267,6 +333,11 @@
          <width>301</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the color that the Heroes chat will appear as. Use the color codes found on the color codes page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -290,6 +361,11 @@
          <height>41</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>Chat Color: (Suffix)</string>
        </property>
@@ -310,6 +386,11 @@
         <height>151</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
+      </property>
       <property name="frameShape">
        <enum>QFrame::Panel</enum>
       </property>
@@ -327,6 +408,7 @@
        </property>
        <property name="font">
         <font>
+         <family>Sans Serif</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -343,6 +425,11 @@
          <width>401</width>
          <height>111</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Trail Permissions that your Super Hero will have access too. Example: Smoke, Wings, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -372,6 +459,11 @@
          <height>17</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="text">
         <string>(optional) Generally not Used</string>
        </property>
@@ -385,6 +477,11 @@
         <width>351</width>
         <height>191</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
       </property>
       <property name="frameShape">
        <enum>QFrame::Panel</enum>
@@ -403,6 +500,7 @@
        </property>
        <property name="font">
         <font>
+         <family>Sans Serif</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -420,6 +518,11 @@
          <height>121</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the list of powers that are displayed for your hero when the player types the command /powers&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -430,7 +533,7 @@
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="btnLoadPowersExamples">
+      <widget class="QPushButton" name="btnLoadPowersExample">
        <property name="geometry">
         <rect>
          <x>130</x>
@@ -438,6 +541,11 @@
          <width>101</width>
          <height>27</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="text">
         <string>Load Example</string>
@@ -452,6 +560,11 @@
         <width>351</width>
         <height>231</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
       </property>
       <property name="frameShape">
        <enum>QFrame::Panel</enum>
@@ -470,6 +583,7 @@
        </property>
        <property name="font">
         <font>
+         <family>Sans Serif</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -487,6 +601,11 @@
          <height>161</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This section gives the players special effects and/or items. See examples&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
@@ -502,6 +621,11 @@
          <width>101</width>
          <height>27</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
        </property>
        <property name="text">
         <string>Load Example</string>
@@ -990,7 +1114,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Noto Sans [unknown]</family>
+         <family>Sans Serif</family>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -1019,7 +1143,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Noto Sans [unknown]</family>
+         <family>Sans Serif</family>
          <strikeout>true</strikeout>
         </font>
        </property>
@@ -1038,7 +1162,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Noto Sans [unknown]</family>
+         <family>Sans Serif</family>
          <underline>true</underline>
         </font>
        </property>
@@ -1057,7 +1181,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Noto Sans [unknown]</family>
+         <family>Sans Serif</family>
          <italic>true</italic>
         </font>
        </property>
@@ -1496,6 +1620,11 @@
       <height>131</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1507,14 +1636,14 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
+      <y>10</y>
       <width>661</width>
-      <height>61</height>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Noto Sans [unknown]</family>
+      <family>Sans Serif</family>
       <pointsize>48</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -1535,7 +1664,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Noto Sans [unknown]</family>
+      <family>Sans Serif</family>
       <pointsize>14</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -1553,6 +1682,11 @@
       <width>791</width>
       <height>71</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+     </font>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -1581,7 +1715,7 @@
   <tabstop>txtSpeech</tabstop>
   <tabstop>listTrails</tabstop>
   <tabstop>txtPowers</tabstop>
-  <tabstop>btnLoadPowersExamples</tabstop>
+  <tabstop>btnLoadPowersExample</tabstop>
   <tabstop>txtBuffs</tabstop>
   <tabstop>btnLoadBuffsExample</tabstop>
   <tabstop>txtInfoPlayerName</tabstop>

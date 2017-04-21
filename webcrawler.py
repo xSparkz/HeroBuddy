@@ -15,8 +15,9 @@
 
 __author__ = 'xSp4rkz'
 
-import mechanize, cookielib, re
-from bs4 import BeautifulSoup
+import mechanize # Used for setting up a browser to access websites on the internet
+import cookielib # Used to store cookies and session information
+import re # Used to execute regular expressions
 from common import *
 
 class WWWConnection():
@@ -24,7 +25,7 @@ class WWWConnection():
     def __init__(self):
 
         # Browser
-        self.__Browser = mechanize.Browser()
+        self.__Browser = mechanize.Browser() # Create an internet browser
 
         # Cookie Jar
         # Needed to handle sessions
@@ -82,21 +83,13 @@ class WWWConnection():
 
         Echo('Extracting UUID', GuiOutput=self.__GuiOutput)
 
-        # Prepare the Website Source Code to be read using BeautifulSoup
-        HTML = BeautifulSoup(PageSource)
+        Matches = re.findall(REGEX_UUID, PageSource)  # Find the User ID
 
-        # Get UUID
-        uuidList = HTML.findAll('span', attrs={'class': 'uuid'})
+        if len(Matches) >= 1:
+            self.__UserID = Matches[1]  # Second match First one has hyphens
+            Echo('Found UUID for (' + PlayerName + '): ' + self.__UserID, GuiOutput=self.__GuiOutput)
 
-        # Did we find the UUID's? There should be 2
-        if uuidList is not None:
-
-            if len(uuidList) > 1: # Check to see if theres more than 1. There should be 2
-
-                uuid = str(uuidList[1].string.extract()).strip() # Grab the SPAN tag and extract the text in between the html tags
-                Echo('Found UUID for (' + PlayerName + '): ' + uuid, GuiOutput=self.__GuiOutput)
-
-                return uuid
+            return self.__UserID
 
         else:
 
@@ -149,39 +142,31 @@ class WWWConnection():
 
         Echo('Parsing Texture Information', GuiOutput=self.__GuiOutput)
 
-        # Remove Brackets
-        PageSource = str(PageSource).replace('{',"") # {
-        PageSource = str(PageSource).replace('}', "") # }
-        PageSource = str(PageSource).replace('[', "") # [
-        PageSource = str(PageSource).replace(']', "") # ]
+        Signature = None # Placeholder for Signature
+        Value = None # Placeholder for Value
 
-        # Split the values. Should end up with 5 Values
-            # (0) id (uuid)
-            # (1) name (name)
-            # (2) properties ("signature") (signature)
-            # (3) name ("textures")
-            # (4) value (value)
+        Matches = re.findall(REGEX_SIGNATURE, PageSource)  # Find the Signature
 
-        Values = str(PageSource).split(',')
+        if len(Matches) == 1:
 
-        Signature = '' # Placeholder for extracted signature
-        Value = '' # Placeholder for extracted value
+            Signature = Matches[0]  # Signature
+            Echo('Found Signature', GuiOutput=self.__GuiOutput)
 
-        if len(Values) == 5: # We did something right
+        else:
 
-            Echo('Extracting Signature', GuiOutput=self.__GuiOutput)
-            SubValues = str(Values[2]).split(':')
-            Signature = str(SubValues[2]).strip('"')
-            Echo('Done!', GuiOutput=self.__GuiOutput)
+            raise Exception('Error: Unexpected result. Page format changed?')
 
-            Echo('Extracting Value', GuiOutput=self.__GuiOutput)
-            SubValues = str(Values[4]).split(':')
-            Value = str(SubValues[1]).strip('"')
-            Echo('Done!', GuiOutput=self.__GuiOutput)
+        Matches = re.findall(REGEX_VALUE, PageSource)  # Find the Value
+
+        if len(Matches) == 1:
+
+            Value = Matches[0]  # Value
+            Echo('Found Value', GuiOutput=self.__GuiOutput)
 
             return Signature, Value # Return both
 
         else:
+
             raise Exception ('Error: Unexpected result. Page format changed?')
 
 

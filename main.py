@@ -19,6 +19,7 @@ import webcrawler # Functions to interact with internet such as obtaining users 
 import sys # Used to supply argv to application
 import gui # All of the GUI code independent from functional code
 from PyQt4 import QtGui # Library for working with GUI
+from PyQt4.QtCore import QObject, pyqtSignal # Used to emit signals
 from common import *
 import os # Used to manipulate files and folders
 
@@ -28,9 +29,11 @@ class HeroBuddyGui(QtGui.QMainWindow, gui.Ui_MainWindow):
         super(HeroBuddyGui, self).__init__(parent)
         self.setupUi(self)
 
-class Application():
+class Application(QObject):
 
     def __init__(self):
+
+        QObject.__init__(self)  # initialisation required for object inheritance
 
         self.MainApp = QtGui.QApplication(sys.argv) # Setup main application
         self.MainWindow = HeroBuddyGui() # Setup main window
@@ -65,157 +68,119 @@ class Application():
 
         # Setup bindings
         # Connect buttons to Callback Functions
-        self.MainWindow.btnCloneToHeroName.mouseReleaseEvent = self.ButtonClick_CloneToHeroName
-        self.MainWindow.btnCloneToHeroesSpeech.mouseReleaseEvent = self.ButtonClick_ClonetToHeroSpeech
-        self.MainWindow.btnCloneToHeroesChatColor.mouseReleaseEvent = self.ButtonClick_CloneToChatColor
-        self.MainWindow.btnClearScratchPad.mouseReleaseEvent = self.ButtonClick_ClearScratchPad
-        self.MainWindow.btnUsePlayerName.mouseReleaseEvent = self.ButtonClick_UsePlayerName
-        self.MainWindow.btnLoadBuffsExample.mouseReleaseEvent = self.ButtonClick_LoadExampleBuffs
-        self.MainWindow.btnLoadPowersExamples.mouseReleaseEvent = self.ButtonClick_LoadExamplePowers
-        self.MainWindow.btnCreate.mouseReleaseEvent = self.ButtonClick_Build
+        self.MainWindow.btnCloneToHeroName.clicked.connect(self.ButtonClick_Clone)
+        self.MainWindow.btnCloneToHeroesSpeech.clicked.connect(self.ButtonClick_Clone)
+        self.MainWindow.btnCloneToHeroesChatColor.clicked.connect(self.ButtonClick_Clone)
+        self.MainWindow.btnClearScratchPad.clicked.connect(self.ButtonClick_ClearScratchPad)
+        self.MainWindow.btnUsePlayerName.clicked.connect(self.ButtonClick_UsePlayerName)
+        self.MainWindow.btnLoadBuffsExample.clicked.connect(self.ButtonClick_LoadExample)
+        self.MainWindow.btnLoadPowersExample.clicked.connect(self.ButtonClick_LoadExample)
+        self.MainWindow.btnCreate.clicked.connect(self.ButtonClick_Build)
 
         #Bukkit Color Code Buttons
-        self.MainWindow.btnColor_1.mouseReleaseEvent = self.ButtonClick_Color_1
-        self.MainWindow.btnColor_2.mouseReleaseEvent = self.ButtonClick_Color_2
-        self.MainWindow.btnColor_3.mouseReleaseEvent = self.ButtonClick_Color_3
-        self.MainWindow.btnColor_4.mouseReleaseEvent = self.ButtonClick_Color_4
-        self.MainWindow.btnColor_5.mouseReleaseEvent = self.ButtonClick_Color_5
-        self.MainWindow.btnColor_6.mouseReleaseEvent = self.ButtonClick_Color_6
-        self.MainWindow.btnColor_7.mouseReleaseEvent = self.ButtonClick_Color_7
-        self.MainWindow.btnColor_8.mouseReleaseEvent = self.ButtonClick_Color_8
-        self.MainWindow.btnColor_9.mouseReleaseEvent = self.ButtonClick_Color_9
-        self.MainWindow.btnColor_10.mouseReleaseEvent = self.ButtonClick_Color_10
-        self.MainWindow.btnColor_11.mouseReleaseEvent = self.ButtonClick_Color_11
-        self.MainWindow.btnColor_12.mouseReleaseEvent = self.ButtonClick_Color_12
-        self.MainWindow.btnColor_13.mouseReleaseEvent = self.ButtonClick_Color_13
-        self.MainWindow.btnColor_14.mouseReleaseEvent = self.ButtonClick_Color_14
-        self.MainWindow.btnColor_15.mouseReleaseEvent = self.ButtonClick_Color_15
-        self.MainWindow.btnColor_16.mouseReleaseEvent = self.ButtonClick_Color_16
-        self.MainWindow.btnColor_17.mouseReleaseEvent = self.ButtonClick_Color_17
-        self.MainWindow.btnColor_18.mouseReleaseEvent = self.ButtonClick_Color_18
-        self.MainWindow.btnColor_19.mouseReleaseEvent = self.ButtonClick_Color_19
-        self.MainWindow.btnColor_20.mouseReleaseEvent = self.ButtonClick_Color_20
-        self.MainWindow.btnColor_21.mouseReleaseEvent = self.ButtonClick_Color_21
-        self.MainWindow.btnColor_22.mouseReleaseEvent = self.ButtonClick_Color_22
+        self.MainWindow.btnColor_1.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_2.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_3.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_4.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_5.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_6.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_7.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_8.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_9.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_10.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_11.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_12.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_13.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_14.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_15.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_16.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_17.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_18.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_19.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_20.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_21.clicked.connect(self.ButtonClick_Color)
+        self.MainWindow.btnColor_22.clicked.connect(self.ButtonClick_Color)
 
     # All Color buttons are responsible for grabbing the corresponding Bukkit Color code
     # and inserting that code into the scratch pad on the Colors tab
     # Helps with building a Heroes Name
-    def ButtonClick_Color_1(self, MouseEvent):
+    def ButtonClick_Color(self):
 
-        self.__ResetButton(self.MainWindow.btnColor_1)
-        self.__InsertTxtToTxt(COLOR_1, self.MainWindow.txtScratchPad)
+        Button = self.sender().objectName() # Store the name of the button that was clicked
+        ColorCode = None # Store color code to use
 
-    def ButtonClick_Color_2(self, MouseEvent):
+        if Button == 'btnColor_1':
+            ColorCode = COLOR_1
 
-        self.__ResetButton(self.MainWindow.btnColor_2)
-        self.__InsertTxtToTxt(COLOR_2, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_2':
+            ColorCode = COLOR_2
 
-    def ButtonClick_Color_3(self, MouseEvent):
+        elif Button == 'btnColor_3':
+            ColorCode = COLOR_3
 
-        self.__ResetButton(self.MainWindow.btnColor_3)
-        self.__InsertTxtToTxt(COLOR_3, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_4':
+            ColorCode = COLOR_4
 
-    def ButtonClick_Color_4(self, MouseEvent):
+        elif Button == 'btnColor_5':
+            ColorCode = COLOR_5
 
-        self.__ResetButton(self.MainWindow.btnColor_4)
-        self.__InsertTxtToTxt(COLOR_4, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_6':
+            ColorCode = COLOR_6
 
-    def ButtonClick_Color_5(self, MouseEvent):
+        elif Button == 'btnColor_7':
+            ColorCode = COLOR_7
 
-        self.__ResetButton(self.MainWindow.btnColor_5)
-        self.__InsertTxtToTxt(COLOR_5, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_8':
+            ColorCode = COLOR_8
 
-    def ButtonClick_Color_6(self, MouseEvent):
+        elif Button == 'btnColor_9':
+            ColorCode = COLOR_9
 
-        self.__ResetButton(self.MainWindow.btnColor_6)
-        self.__InsertTxtToTxt(COLOR_6, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_10':
+            ColorCode = COLOR_10
 
-    def ButtonClick_Color_7(self, MouseEvent):
+        elif Button == 'btnColor_11':
+            ColorCode = COLOR_11
 
-        self.__ResetButton(self.MainWindow.btnColor_7)
-        self.__InsertTxtToTxt(COLOR_7, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_12':
+            ColorCode = COLOR_12
 
-    def ButtonClick_Color_8(self, MouseEvent):
+        elif Button == 'btnColor_13':
+            ColorCode = COLOR_13
 
-        self.__ResetButton(self.MainWindow.btnColor_8)
-        self.__InsertTxtToTxt(COLOR_8, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_14':
+            ColorCode = COLOR_14
 
-    def ButtonClick_Color_9(self, MouseEvent):
+        elif Button == 'btnColor_15':
+            ColorCode = COLOR_15
 
-        self.__ResetButton(self.MainWindow.btnColor_9)
-        self.__InsertTxtToTxt(COLOR_9, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_16':
+            ColorCode = COLOR_16
 
-    def ButtonClick_Color_10(self, MouseEvent):
+        elif Button == 'btnColor_17':
+            ColorCode = COLOR_17
 
-        self.__ResetButton(self.MainWindow.btnColor_10)
-        self.__InsertTxtToTxt(COLOR_10, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_18':
+            ColorCode = COLOR_18
 
-    def ButtonClick_Color_11(self, MouseEvent):
+        elif Button == 'btnColor_19':
+            ColorCode = COLOR_19
 
-        self.__ResetButton(self.MainWindow.btnColor_11)
-        self.__InsertTxtToTxt(COLOR_11, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_20':
+            ColorCode = COLOR_20
 
-    def ButtonClick_Color_12(self, MouseEvent):
+        elif Button == 'btnColor_21':
+            ColorCode = COLOR_21
 
-        self.__ResetButton(self.MainWindow.btnColor_12)
-        self.__InsertTxtToTxt(COLOR_12, self.MainWindow.txtScratchPad)
+        elif Button == 'btnColor_22':
+            ColorCode = COLOR_22
 
-    def ButtonClick_Color_13(self, MouseEvent):
+        self.__InsertTxtToTxt(ColorCode, self.MainWindow.txtScratchPad)
 
-        self.__ResetButton(self.MainWindow.btnColor_13)
-        self.__InsertTxtToTxt(COLOR_13, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_14(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_14)
-        self.__InsertTxtToTxt(COLOR_14, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_15(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_15)
-        self.__InsertTxtToTxt(COLOR_15, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_16(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_16)
-        self.__InsertTxtToTxt(COLOR_16, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_17(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_17)
-        self.__InsertTxtToTxt(COLOR_17, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_18(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_18)
-        self.__InsertTxtToTxt(COLOR_18, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_19(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_19)
-        self.__InsertTxtToTxt(COLOR_19, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_20(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_20)
-        self.__InsertTxtToTxt(COLOR_20, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_21(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_21)
-        self.__InsertTxtToTxt(COLOR_21, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_Color_22(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnColor_22)
-        self.__InsertTxtToTxt(COLOR_22, self.MainWindow.txtScratchPad)
-
-    def ButtonClick_UsePlayerName(self, MouseEvent):
+    def ButtonClick_UsePlayerName(self):
         # Grabs the UUID along with the Texture Signature and Value from Minecraft websites
         # connected to the PlayerName
 
-        self.__ResetButton(self.MainWindow.btnUsePlayerName) # Resets the button from a pressed state to an unpressed state *bug fix*
         self.__CopyTxtToTxt(self.MainWindow.txtPlayerName, self.MainWindow.txtInfoPlayerName) # Copy the PlayerName to the Player Info Tab
         self.UUID = self.Website.GetUUID(str(self.MainWindow.txtPlayerName.toPlainText())) # Grab UUID
         self.Signature, self.Value = self.Website.GetSignature(self.UUID) # Grab the Signature and Value
@@ -227,39 +192,38 @@ class Application():
         self.MainWindow.txtInfoSignature.setPlainText(self.Signature) # Display the Signature
         self.MainWindow.txtInfoValue.setPlainText(self.Value) # Display the Value
 
-    def ButtonClick_CloneToHeroName(self, MouseEvent):
+    def ButtonClick_Clone(self):
 
-        self.__ResetButton(self.MainWindow.btnCloneToHeroName)
-        self.__CopyTxtToTxt(self.MainWindow.txtScratchPad, self.MainWindow.txtHeroesFancyName)
+        Button = self.sender().objectName() # Store name of button
+        TargetTextbox = None # Textbox Object we are going to clone our text to
 
-    def ButtonClick_CloneToChatColor(self, MouseEvent):
+        if Button == 'btnCloneToHeroName':
+            TargetTextbox = self.MainWindow.txtHeroesFancyName
 
-        self.__ResetButton(self.MainWindow.btnCloneToHeroesChatColor)
-        self.__CopyTxtToTxt(self.MainWindow.txtScratchPad, self.MainWindow.txtChatColor)
+        elif Button == 'btnCloneToHeroesChatColor':
+            TargetTextbox = self.MainWindow.txtChatColor
 
-    def ButtonClick_ClonetToHeroSpeech(self, MouseEvent):
+        elif Button == 'btnCloneToHeroesSpeech':
+            TargetTextbox = self.MainWindow.txtSpeech
 
-        self.__ResetButton(self.MainWindow.btnCloneToHeroesSpeech)
-        self.__CopyTxtToTxt(self.MainWindow.txtScratchPad,  self.MainWindow.txtSpeech)
+        self.__CopyTxtToTxt(self.MainWindow.txtScratchPad, TargetTextbox) # Copy the text over
 
-    def ButtonClick_ClearScratchPad(self, MouseEvent):
 
-        self.__ResetButton(self.MainWindow.btnClearScratchPad)
+    def ButtonClick_ClearScratchPad(self):
+
         self.MainWindow.txtScratchPad.clear()
 
-    def ButtonClick_LoadExampleBuffs(self, MouseEvent):
+    def ButtonClick_LoadExample(self):
 
-        self.__ResetButton(self.MainWindow.btnLoadBuffsExample)
-        self.__CopyFileToText(FILE_EXAMPLE_BUFFS, self.MainWindow.txtBuffs)
+        Button = self.sender().objectName()  # Store name of button
 
-    def ButtonClick_LoadExamplePowers(self, MouseEvent):
+        if Button == 'btnLoadBuffsExample':
+            self.__CopyFileToText(FILE_EXAMPLE_BUFFS, self.MainWindow.txtBuffs)
 
-        self.__ResetButton(self.MainWindow.btnLoadPowersExamples)
-        self.__CopyFileToText(FILE_EXAMPLE_POWERS, self.MainWindow.txtPowers)
+        elif Button == 'btnLoadPowersExample':
+            self.__CopyFileToText(FILE_EXAMPLE_POWERS, self.MainWindow.txtPowers)
 
-    def ButtonClick_Build(self, MouseEvent):
-
-        self.__ResetButton(self.MainWindow.btnCreate)
+    def ButtonClick_Build(self):
 
         Status = self.MainWindow.listStatus  # Pointer to our status window
 
@@ -474,13 +438,6 @@ class Application():
         Echo('Done!', Status)
         Echo('**COMPLETE** Hero has been successfully created!', Status)
 
-    def __ResetButton(self, Button):
-        # Function used to reset a button for a smooth 'click' animation.
-        # Seems to hang on Mouse release if callback function is called
-        # This function makes it appear seamless
-
-        Button.clearFocus() # Take away focus to prevent the button animation from 'sticking'
-        Button.setFocus() # Return focus to the button after animation as completed *Bug Fix*
 
     def __CopyTxtToTxt(self, Source, Destination):
         # Take the text from a Source Textbox and Copy it to the Destination Textbox
