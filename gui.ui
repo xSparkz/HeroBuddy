@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>802</width>
-    <height>668</height>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,7 +25,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>90</y>
+      <y>130</y>
       <width>801</width>
       <height>491</height>
      </rect>
@@ -49,94 +49,8 @@
     </property>
     <widget class="QWidget" name="tabCoreDetails">
      <attribute name="title">
-      <string>Core Details</string>
+      <string>Hero Details</string>
      </attribute>
-     <widget class="QFrame" name="framePlayerName">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>421</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Sans Serif</family>
-       </font>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="lblPlayerName">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>131</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sans Serif</family>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Minecraft Player Name:</string>
-       </property>
-       <property name="scaledContents">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="txtPlayerName">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>10</y>
-         <width>181</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sans Serif</family>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Player Name you use in Minecraft&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="lineWrapMode">
-        <enum>QPlainTextEdit::NoWrap</enum>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btnUsePlayerName">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>10</y>
-         <width>71</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sans Serif</family>
-        </font>
-       </property>
-       <property name="text">
-        <string>use</string>
-       </property>
-      </widget>
-     </widget>
      <widget class="QFrame" name="frameHeroDetails">
       <property name="geometry">
        <rect>
@@ -169,6 +83,9 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -232,6 +149,9 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -250,6 +170,9 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -292,6 +215,9 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -364,6 +290,9 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -409,6 +338,7 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -453,7 +383,7 @@
       <widget class="QLabel" name="lblOptional">
        <property name="geometry">
         <rect>
-         <x>50</x>
+         <x>70</x>
          <y>10</y>
          <width>181</width>
          <height>17</height>
@@ -501,6 +431,7 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -584,6 +515,7 @@
        <property name="font">
         <font>
          <family>Sans Serif</family>
+         <pointsize>8</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -632,195 +564,333 @@
        </property>
       </widget>
      </widget>
+     <widget class="QLabel" name="iconSmile">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>images/happy.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblYourHero">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>321</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>21</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Your Hero</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tabPlayerDetails">
      <attribute name="title">
       <string>Your Player Info</string>
      </attribute>
-     <widget class="QLabel" name="lblInfoPlayerName">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>101</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Player Name:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblInfoUUID">
+     <widget class="QFrame" name="framePlayerName">
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>70</y>
-        <width>81</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>UUID:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblInfoSignature">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>110</y>
-        <width>101</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Signature:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblInfoValue">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>230</y>
-        <width>101</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Value:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="txtInfoPlayerName">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
         <y>20</y>
-        <width>211</width>
-        <height>31</height>
+        <width>461</width>
+        <height>51</height>
        </rect>
       </property>
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The PlayerName you have used&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <property name="font">
+       <font>
+        <family>Sans Serif</family>
+       </font>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="textInteractionFlags">
-       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-      </property>
+      <widget class="QLabel" name="lblPlayerName">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>161</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Minecraft Player Name:</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txtPlayerName">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>10</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Player Name you use in Minecraft&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnUsePlayerName">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>10</y>
+         <width>71</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>use</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="QPlainTextEdit" name="txtInfoUUID">
+     <widget class="QFrame" name="frame_2">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>60</y>
-        <width>641</width>
-        <height>31</height>
+        <x>40</x>
+        <y>80</y>
+        <width>751</width>
+        <height>371</height>
        </rect>
-      </property>
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's UUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Box</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="textInteractionFlags">
-       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-      </property>
+      <widget class="QPlainTextEdit" name="txtInfoPlayerName">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>10</y>
+         <width>211</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The PlayerName you have used&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblInfoPlayerName">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>101</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Player Name:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txtInfoSignature">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>90</y>
+         <width>611</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's Texture Signature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblInfoSignature">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>101</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Signature:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblInfoUUID">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>50</y>
+         <width>81</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>UUID:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txtInfoValue">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>220</y>
+         <width>611</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's Texture Value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txtInfoUUID">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>50</y>
+         <width>611</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's UUID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblInfoValue">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>101</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Value:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+       </property>
+      </widget>
      </widget>
-     <widget class="QPlainTextEdit" name="txtInfoSignature">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>100</y>
-        <width>641</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's Texture Signature&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
-      </property>
-      <property name="textInteractionFlags">
-       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="txtInfoValue">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>230</y>
-        <width>641</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The Player's Texture Value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
-      </property>
-      <property name="textInteractionFlags">
-       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-      </property>
-     </widget>
-     <zorder>txtInfoSignature</zorder>
-     <zorder>lblInfoPlayerName</zorder>
-     <zorder>lblInfoUUID</zorder>
-     <zorder>lblInfoSignature</zorder>
-     <zorder>lblInfoValue</zorder>
-     <zorder>txtInfoPlayerName</zorder>
-     <zorder>txtInfoUUID</zorder>
-     <zorder>txtInfoValue</zorder>
     </widget>
     <widget class="QWidget" name="tabColorCodes">
      <attribute name="title">
@@ -1614,9 +1684,9 @@
    <widget class="QLabel" name="picIcon">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>-10</y>
-      <width>101</width>
+      <x>660</x>
+      <y>0</y>
+      <width>141</width>
       <height>131</height>
      </rect>
     </property>
@@ -1629,56 +1699,40 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/icon.png</pixmap>
+     <pixmap>images/happy-big.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="lblHeroBuddy">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>661</width>
+      <x>50</x>
+      <y>20</y>
+      <width>631</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Sans Serif</family>
-      <pointsize>48</pointsize>
+      <pointsize>45</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
+      <underline>true</underline>
      </font>
     </property>
     <property name="text">
      <string>Hero Buddy</string>
     </property>
-   </widget>
-   <widget class="QLabel" name="lblMalonsServer">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>60</y>
-      <width>191</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Sans Serif</family>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Malons Server</string>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QListWidget" name="listStatus">
     <property name="geometry">
      <rect>
       <x>5</x>
-      <y>590</y>
+      <y>630</y>
       <width>791</width>
       <height>71</height>
      </rect>
@@ -1707,8 +1761,6 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>txtPlayerName</tabstop>
-  <tabstop>btnUsePlayerName</tabstop>
   <tabstop>txtHeroesName</tabstop>
   <tabstop>txtHeroesFancyName</tabstop>
   <tabstop>checkBoxOP</tabstop>
@@ -1718,10 +1770,6 @@
   <tabstop>btnLoadPowersExample</tabstop>
   <tabstop>txtBuffs</tabstop>
   <tabstop>btnLoadBuffsExample</tabstop>
-  <tabstop>txtInfoPlayerName</tabstop>
-  <tabstop>txtInfoUUID</tabstop>
-  <tabstop>txtInfoSignature</tabstop>
-  <tabstop>txtInfoValue</tabstop>
   <tabstop>txtScratchPad</tabstop>
   <tabstop>btnCloneToHeroName</tabstop>
   <tabstop>btnCloneToHeroesSpeech</tabstop>
