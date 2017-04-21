@@ -19,7 +19,7 @@ import webcrawler # Functions to interact with internet such as obtaining users 
 import sys # Used to supply argv to application
 import gui # All of the GUI code independent from functional code
 from PyQt4 import QtGui # Library for working with GUI
-from PyQt4.QtCore import QObject, pyqtSignal # Used to emit signals
+from PyQt4.QtCore import QObject # Used to work with Gui Objects
 from common import *
 import os # Used to manipulate files and folders
 
